@@ -6,7 +6,7 @@ router.get('/', (req, res, next) => {
   const user = req.session.user;
   console.log(req.session)
   if (!user) return res.redirect('/');
-  res.redirect('/user');
+  res.redirect('/shows.html');
 });
 
 router.get('/me', (req, res, next) => {

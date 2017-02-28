@@ -14,7 +14,9 @@ var searchShows = function(evt) {
     // $('body').append(result)
     // })
     console.log(response[0].show) //first object 'show'key ['score' key is independent]
-    $('body').append(response[0].show.name)
+    response.forEach((item) => {
+    $('body').append(item.show.name)
+    })
   })
 }
 
