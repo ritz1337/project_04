@@ -1,12 +1,14 @@
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var parser = require('body-parser');
-var app = express();
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const parser = require('body-parser');
+const session = require('express-session');
+const app = express();
+require('dotenv').config();
 
 
 // var mongoose = require('./api/config/database');
-// var routes = require('./api/config/routes')
+app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: true }));
 
 app.use(logger('dev'));
 app.use(parser.json());
@@ -14,6 +16,11 @@ app.use(parser.urlencoded({ extended: true}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, function () {
+app.use('/auth', require('./api/config/routes/auth.js'));
+app.use('/profile', require('./api/config/routes/profile.js'));
+app.use('/user', require('./api/config/routes/user.js'));
+
+const port = process.env.PORT || 3000;
+app.listen(port, function () {
   console.log('PouchKotato app listening on port 3000!')
 })
