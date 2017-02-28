@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="tvshows" lang="en">
 <head>
   <meta charset="UTF-8">
   <title>PouchKotato</title>
@@ -11,9 +11,12 @@
   <h1>HELLO THESE ARE YOUR SHOWS</h1>
   <h2>SEE BELOW</h2>
 
-  <div class="search-shows-container">
-      <input type="text" id="searchshow" name="search">
-      <button type="button" id="search-button">Search</button>
+  <div ng-controller="SearchController as search" class="search-shows-container">
+      <input ng-model="search.query" type="text" id="searchshow" name="search">
+      <button ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
+      <ul>
+        <li ng-repeat="show in search.data" data-id="{{show.id}}">{{show.show.name}}</li>
+      </ul>
   </div>
   <div class="shows-container">
 
@@ -22,6 +25,8 @@
 
   <script src="assets/js/jquery-3.1.1.js"></script>
   <script src="assets/js/app.js" charset="utf-8"></script>
+  <script src="assets/js/show_api_service.js"></script>
+  <script src="assets/js/searchcontroller.js"></script>
 
 </body>
 </html>
