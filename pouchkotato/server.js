@@ -5,9 +5,9 @@ const parser = require('body-parser');
 const session = require('express-session');
 const app = express();
 require('dotenv').config();
+const mongoose = require('./api/config/db/database');
 
 
-// var mongoose = require('./api/config/database');
 app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: true }));
 
 app.use(logger('dev'));
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/auth', require('./api/config/routes/auth.js'));
 app.use('/profile', require('./api/config/routes/profile.js'));
-app.use('/user', require('./api/config/routes/user.js'));
+// app.use('/user', require('./api/config/routes/user.js'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, function () {

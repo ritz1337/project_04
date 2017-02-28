@@ -13,6 +13,7 @@ angular.module('tvshows')
       }).then(cb)
     }
 
+
     return {
       search: search
     }

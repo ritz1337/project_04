@@ -2,10 +2,21 @@ const express = require('express');
 const request = require('request');
 const router = express.Router();
 
+var User = require('../models/users');
+
+
 router.get('/', (req, res, next) => {
   const user = req.session.user;
   console.log(req.session)
   if (!user) return res.redirect('/');
+  console.log(req.session.user.id)
+  var item = {
+    name: req.session.user.displayName,
+    google_id: req.session.user.id
+  }
+  var data = new User(item)
+  data.save();
+
   res.redirect('/shows.html');
 });
 
