@@ -10,12 +10,6 @@ router.get('/', (req, res, next) => {
   console.log(req.session)
   if (!user) return res.redirect('/');
   console.log(req.session.user.id)
-  var item = {
-    name: req.session.user.displayName,
-    google_id: req.session.user.id
-  }
-  var data = new User(item)
-  data.save();
 
   res.redirect('/shows.html');
 });
@@ -31,7 +25,28 @@ router.get('/me', (req, res, next) => {
   }
   request(options, (err, response, body) => {
     const user = JSON.parse(body);
+    console.log(user)
     req.session.user = user;
+    console.log(user.id)
+    User.find({
+      google_id: user.id
+    }, (err, data) => {
+        if (err) {
+          throw err;
+        } else if (!data[0]) {
+          const newuser = new User ({
+            username: user.displayName,
+            google_id: user.id,
+            f_name: user.name.givenName,
+            l_name: user.name.familyName,
+          })
+          newuser.save(err => {
+            if (err) console.log(err);
+              else console.log('unique user created', user.displayName)
+          })
+        }
+    })
+
     return res.redirect('/profile');
   })
 });
