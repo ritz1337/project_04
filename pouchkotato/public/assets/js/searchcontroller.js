@@ -6,17 +6,20 @@ angular.module('tvshows')
   function SearchController (ShowApiService, $http) {
     var vm = this;
 
-    vm.username = '';
+    vm.user = {};
     vm.query = '';
     vm.handleSearch = handleSearch;
     vm.addShow = addShow
 
     getUsername();
+
+    // fetching current user object from the server
     function getUsername() {
       $http
         .get('/user')
         .then(function(res) {
-          console.log(res)
+          console.log(res) //USER OBJECT
+          vm.user = res.data
         }, function(err) {
           console.log(err)
         });
@@ -43,10 +46,17 @@ angular.module('tvshows')
         console.log(vm.selectedShow.name)
       })
 
+
       // updating database with show id
 
-
-
+      $http
+        .put(`/user/show/add/${showId}`, {showId})
+        .then(function(res) {
+          console.log(res.data.message);
+        },
+        function(err) {
+          console.log(err);
+        })
     }
 
   }

@@ -5,6 +5,7 @@ var UserSchema = mongoose.Schema({
   google_id: String,
   f_name: String,
   l_name: String,
+  shows: []
 
 });
 
