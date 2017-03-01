@@ -1,9 +1,9 @@
 // currently redundant
 
-// const express = require('express');
-// const request = require('request');
-// const router = express.Router();
-// const path = require('path');
+const express = require('express');
+const request = require('request');
+const router = express.Router();
+const path = require('path');
 // const showApi = require('../showapi/tvmaze');
 
 // //send shows.html on successful login
@@ -25,4 +25,11 @@
 
 // })
 
-// module.exports = router;
+router.get('/', (req, res, next) => {
+  const user = req.session.user;
+    if(!user) return res.redirect('/');
+  // console.log('hi')
+    res.send(user);
+});
+
+module.exports = router;
