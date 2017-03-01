@@ -11,6 +11,7 @@
   function MainRouter($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('shows', {
+        // url: '/shows',
         url: '/shows',
         templateUrl: 'shows.html'
       })

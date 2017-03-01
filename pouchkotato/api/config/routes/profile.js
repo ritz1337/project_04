@@ -11,7 +11,9 @@ router.get('/', (req, res, next) => {
   if (!user) return res.redirect('/');
   console.log(req.session.user.id)
 
-  res.redirect('/main.html');
+  res.redirect('/main.html#/shows');
+  // res.redirect('/main/shows');
+  // res.redirect('/main.html');
 });
 
 router.get('/me', (req, res, next) => {

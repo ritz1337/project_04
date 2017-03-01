@@ -5,8 +5,17 @@ angular.module('tvshows')
 
   function ShowApiService ($http) {
 
-    function search(input, cb) {
+    function searchAll(input, cb) {
       const url = `http://api.tvmaze.com/search/shows?q=${input}`
+      return $http({
+        method: 'GET',
+        url: url
+      }).then(cb)
+    }
+
+    function returnOne(input, cb) {
+      const url = `http://api.tvmaze.com/shows/${input}`
+      console.log(url);
       return $http({
         method: 'GET',
         url: url
@@ -15,6 +24,11 @@ angular.module('tvshows')
 
 
     return {
-      search: search
+      searchAll: searchAll,
+      returnOne: returnOne
     }
   }
+
+
+// api route to get info on particular show
+// http://api.tvmaze.com/shows/{{showid}}

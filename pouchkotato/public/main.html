@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <title>PouchKotato</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
 
 
 </head>
@@ -17,26 +15,18 @@
       <a ui-sref-active="active" ui-sref="calendar">Calendar</a>
     </nav>
   </header>
-  <h1>HELLO THESE ARE YOUR SHOWS</h1>
-  <h2>SEE BELOW</h2>
-
-  <div ng-controller="SearchController as search" class="search-shows-container">
-      <input ng-model="search.query" type="text" id="searchshow" name="search">
-      <button ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
-      <div class="search-results-container">
-        <div ng-repeat="show in search.data" data-id="{{show.show.id}}">{{show.show.name}}
-        </div>
-      </div>
-  </div>
 
     <main ui-view>
       Show for a brief second???
     </main>
 
   <script src="assets/js/jquery-3.1.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
   <script src="assets/js/app.js" charset="utf-8"></script>
   <script src="assets/js/show_api_service.js"></script>
   <script src="assets/js/searchcontroller.js"></script>
+  <script src="assets/js/show_list_controller.js"></script>
 
 </body>
 </html>
