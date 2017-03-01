@@ -1,25 +1,24 @@
-// console.log('hellooo')
+// angular.module('tvshows', [])
 
-// var $showInput = $('#searchshow');
-// var $searchBtn = $('#search-button');
+(function() {
+  'use strict';
 
+  angular.module('tvshows', ['ui.router'])
+    .config(MainRouter);
 
-// var searchShows = function(evt) {
-//   var input = $showInput.val();
+  MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-//   $.post('/user/shows/search', {input}, function(response) {
-//     // console.log(response)
-//     console.log(response) //array of objects
-//     // response.results.forEach((result) => {
-//     // $('body').append(result)
-//     // })
-//     console.log(response[0].show) //first object 'show'key ['score' key is independent]
-//     response.forEach((item) => {
-//     $('body').append(item.show.name)
-//     })
-//   })
-// }
+  function MainRouter($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('shows', {
+        url: '/shows',
+        templateUrl: 'shows.html'
+      })
+      .state('calendar', {
+        url: '/calendar',
+        templateUrl: 'calendar.html'
+      });
 
-// $('.search-shows-container').on('click', '#search-button', searchShows);
-
-angular.module('tvshows', [])
+    $urlRouterProvider.otherwise('/');
+  }
+}());
