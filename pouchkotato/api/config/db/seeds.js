@@ -1,23 +1,30 @@
 var mongoose = require('./database');
 
-var President = require('../models/president');
+var User = require('../models/user');
 
-var presidents = [
-  {"name": "Blorp Florp McRichards", "start": 1789, "end": 1790},
-  {"name": "John MuscleBrain Adams", "start": 1790, "end": 1801},
-  {"name": "Blogpost Dorgabn", "start": 1801, "end": 1949},
-  {"name": "Mike", "start": 1949, "end": 1947}
+var users = [
+  {"username": "User1", "google_id": "100761763622898023421", "f_name": "User", "l_name": "1"},
+  {"username": "User2", "google_id": "100761763622898023422", "f_name": "User", "l_name": "2"},
+  {"username": "User3", "google_id": "100761763622898023423", "f_name": "User", "l_name": "3"},
+  {"username": "User4", "google_id": "100761763622898023424", "f_name": "User", "l_name": "4"},
+
 ];
 
-President.remove({}, function(err) {
+User.remove({}, function(err) {
   if (err) console.log(err);
-  President.create(presidents, function(err, presidents) {
+  User.create(users, function(err, users) {
     if (err) {
       console.log(err);
     } else {
-      console.log("Database seeded with " + presidents.length  + " presidents.");
+      console.log("Database seeded with " + users.length  + " users.");
       mongoose.connection.close();
     }
     process.exit();
   });
 });
+
+//
+//   username: String,
+//   google_id: String,
+//   f_name: String,
+//   l_name: String,

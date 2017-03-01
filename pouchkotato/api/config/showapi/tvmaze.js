@@ -1,14 +1,16 @@
-const request = require('request');
+// not required
 
-function search(input, cb) {
-  const url = `http://api.tvmaze.com/search/shows?q=${input}`
-  request(url, (err, res, body) => {
-    console.log(body);
-    const data = JSON.parse(body)
-    cb(data);
-  })
-}
+// const request = require('request');
 
-module.exports = {
-  search
-}
+// function search(input, cb) {
+//   const url = `http://api.tvmaze.com/search/shows?q=${input}`
+//   request(url, (err, res, body) => {
+//     console.log(body);
+//     const data = JSON.parse(body)
+//     cb(data);
+//   })
+// }
+
+// module.exports = {
+//   search
+// }
