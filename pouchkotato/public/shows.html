@@ -5,12 +5,12 @@
 
   <input ng-model="search.query" type="text" id="searchshow" name="search">
   <button ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
-  <div class="search-results-container">
+  <div class="search-results-container animate-show-hide" ng-hide="search.resultClicked">
     <div class="search-result" ng-repeat="show in search.results" data-id="{{show.show.id}}">
-    <button ng-click="search.addShow(show.show.id)">{{show.show.name}}</button>
+    <button ng-click="search.addShow(show.show.id)" ng-model="search.resultClicked">{{show.show.name}}</button>
     </div>
   </div>
-  <div>{{search.selectedShow.name}}</div>
+  <!-- <div>{{search.selectedShow.name}}</div> -->
   <button ng-click="search.runningTest()">test</button>
 </div>
 <hr>
@@ -21,4 +21,10 @@
   <div ng-repeat="show in list.comm.showIds track by $index">
     <p>{{show}}</p>
   </div>
+
+  <div ng-repeat="show in list.comm.shows track by $index">
+    <p>{{show.data.name}}</p>
+  </div>
+
 </div>
+

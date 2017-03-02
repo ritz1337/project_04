@@ -13,6 +13,8 @@ angular.module('tvshows')
 
     vm.comm = Comm;
 
+    var searchResults = angular.element( document.querySelector( '.search-results-container' ) );
+
     getUsername();
 
 
@@ -27,7 +29,7 @@ angular.module('tvshows')
       $http
         .get('/user')
         .then(function(res) {
-          console.log(res) //USER OBJECT
+          // console.log(res) //USER OBJECT
           vm.user = res.data
         }, function(err) {
           console.log(err)
@@ -37,30 +39,30 @@ angular.module('tvshows')
     // find shows from API Based on User Query
     function handleSearch () {
       ShowApiService.searchAll(vm.query, function(res) {
-        console.log(res)
+        // console.log(res) //returns show choices from search
         vm.results = res.data;
         vm.query = ''
       })
+      vm.resultClicked = false
+      // searchResults.show();
     }
 
     // add shows to user's list on show selection
     function addShow (showId) {
-      console.log(showId) //id of show show selection
+      // console.log(showId) //id of show selection by user(button click)
 
       // sending show ID to API service & returning show information
       ShowApiService.returnOne(showId, function(res) {
-        console.log(res);
+        // console.log(res); //response object of queried show id
         vm.selectedShow = res.data //saving returned API show to selectedShow object
-        console.log(vm.selectedShow) //Selected show Object
-        console.log(vm.selectedShow.name)
+        // console.log(vm.selectedShow) //Selected show Object stored to variable
+        // console.log(vm.selectedShow.name) //show object name
         vm.comm.saveToDatabase(showId)
 
       })
-
       // remove results div on show selection
-      var searchResults = angular.element( document.querySelector( '.search-results-container' ) );
-      // var searchResults = document.querySelector( '.search-results-container' ); // WORKS ALSO
-      searchResults.remove();
+      vm.resultClicked = true
+      // searchResults.hide();
 
 
     }

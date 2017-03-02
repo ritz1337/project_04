@@ -41,7 +41,7 @@ router.get('/shows/all', (req, res, next) => {
   User.find({google_id: gId}, 'shows', function (err, data) {
     if (err) console.log(err);
     else {
-      console.log(data[0]) //gID + shows array
+      // console.log(data[0]) //gID + shows array
       res.json(data[0])
     }
   })

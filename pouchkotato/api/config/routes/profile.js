@@ -7,9 +7,9 @@ var User = require('../models/user');
 
 router.get('/', (req, res, next) => {
   const user = req.session.user;
-  console.log(req.session)
+  // console.log(req.session)
   if (!user) return res.redirect('/');
-  console.log(req.session.user.id)
+  // console.log(req.session.user.id)
 
   res.redirect('/main.html#/shows');
   // res.redirect('/main/shows');
@@ -27,9 +27,9 @@ router.get('/me', (req, res, next) => {
   }
   request(options, (err, response, body) => {
     const user = JSON.parse(body);
-    console.log(user)
+    // console.log(user)
     req.session.user = user;
-    console.log(user.id)
+    // console.log(user.id) //google id on user object
     User.find({
       google_id: user.id
     }, (err, data) => {
