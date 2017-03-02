@@ -1,9 +1,9 @@
 angular.module('tvshows')
   .controller('SearchController', SearchController)
 
-  SearchController.$inject = ['ShowApiService', '$http']
+  SearchController.$inject = ['ShowApiService', '$http','Comm']
 
-  function SearchController (ShowApiService, $http) {
+  function SearchController (ShowApiService, $http, Comm) {
     var vm = this;
 
     vm.user = {};
@@ -12,6 +12,14 @@ angular.module('tvshows')
     vm.addShow = addShow
 
     getUsername();
+
+    vm.comm = Comm;
+
+    vm.runningTest = function () {
+      console.log('runningTest')
+      vm.comm.test = 'aosidjfoaisjdf'
+    }
+
 
     // fetching current user object from the server
     function getUsername() {
@@ -44,19 +52,13 @@ angular.module('tvshows')
         vm.selectedShow = res.data //saving returned API show to selectedShow object
         console.log(vm.selectedShow) //Selected show Object
         console.log(vm.selectedShow.name)
+        vm.comm.saveToDatabase(showId)
       })
 
 
       // updating database with show id
 
-      $http
-        .put(`/user/show/add/${showId}`, {showId})
-        .then(function(res) {
-          console.log(res.data.message);
-        },
-        function(err) {
-          console.log(err);
-        })
+
     }
 
   }

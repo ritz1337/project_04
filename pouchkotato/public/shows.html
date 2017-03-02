@@ -11,8 +11,10 @@
     </div>
   </div>
   <div>{{search.selectedShow.name}}</div>
+  <button ng-click="search.runningTest()">test</button>
 </div>
+<hr>
 
 <div ng-controller="ShowListController as list" class="shows-container">
-{{list.test}}
+{{list.comm.test}}
 </div>
