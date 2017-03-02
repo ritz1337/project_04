@@ -1,9 +1,9 @@
 angular.module('tvshows')
   .service('Comm', Comm)
 
-  Comm.$inject = ['$http']
+  Comm.$inject = ['$http', 'ShowApiService']
 
-  function Comm ($http) {
+  function Comm ($http, ShowApiService) {
     var test = 'Hello'
     var showIds = [];
 
@@ -30,6 +30,9 @@ angular.module('tvshows')
           // showIds = []; //commenting this out displays showIds
           console.log(res.data.shows); //array of show IDs
           for(var i = 0; i < res.data.shows.length; i++) {
+            ShowApiService.returnOne(res.data.shows[i], function(oneShow) {
+                console.log('each show', oneShow) //API queried for each show ID in user document
+            })
             if (!isInArray(res.data.shows[i], showIds)) {
               showIds.push(res.data.shows[i])
             }
