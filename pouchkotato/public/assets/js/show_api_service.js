@@ -22,13 +22,13 @@ angular.module('tvshows')
     //   }).then(cb)
     // }
 
-    function returnOne(input) {
+    function returnOne(input, cb) {
       const url = `http://api.tvmaze.com/shows/${input}`
       // console.log(url); //url with show id appended
       return $http({
         method: 'GET',
         url: url
-      })
+      }).then(cb)
     }
 
     return {
