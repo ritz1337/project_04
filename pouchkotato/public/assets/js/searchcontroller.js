@@ -57,8 +57,10 @@ angular.module('tvshows')
 
       })
 
-
-      // updating database with show id
+      // remove results div on show selection
+      var searchResults = angular.element( document.querySelector( '.search-results-container' ) );
+      // var searchResults = document.querySelector( '.search-results-container' ); // WORKS ALSO
+      searchResults.remove();
 
 
     }
