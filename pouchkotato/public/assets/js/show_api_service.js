@@ -13,15 +13,23 @@ angular.module('tvshows')
       }).then(cb)
     }
 
-    function returnOne(input, cb) {
+    // function returnOne(input, cb) {
+    //   const url = `http://api.tvmaze.com/shows/${input}`
+    //   // console.log(url); //url with show id appended
+    //   return $http({
+    //     method: 'GET',
+    //     url: url
+    //   }).then(cb)
+    // }
+
+    function returnOne(input) {
       const url = `http://api.tvmaze.com/shows/${input}`
       // console.log(url); //url with show id appended
       return $http({
         method: 'GET',
         url: url
-      }).then(cb)
+      })
     }
-
 
     return {
       searchAll: searchAll,
