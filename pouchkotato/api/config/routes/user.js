@@ -36,7 +36,18 @@ router.get('/', (req, res, next) => {
     res.send(user);
 });
 
-router.put('/show/add/:id', (req, res, next) => {
+router.get('/shows/all', (req, res, next) => {
+  var gId = req.session.user.id
+  User.find({google_id: gId}, 'shows', function (err, data) {
+    if (err) console.log(err);
+    else {
+      console.log(data[0]) //gID + shows array
+      res.json(data[0])
+    }
+  })
+})
+
+router.put('/shows/add/:id', (req, res, next) => {
   var showId = req.params.id
   console.log(showId);
   var gId = req.session.user.id

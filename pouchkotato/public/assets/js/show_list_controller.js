@@ -9,4 +9,7 @@ function ShowListController ($http, Comm) {
     vm.comm = Comm
     vm.test = "TEST"
 
+    vm.comm.getAllShows()
+
+
   }

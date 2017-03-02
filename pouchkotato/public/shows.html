@@ -6,7 +6,7 @@
   <input ng-model="search.query" type="text" id="searchshow" name="search">
   <button ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
   <div class="search-results-container">
-    <div class = "search-result" ng-repeat="show in search.results" data-id="{{show.show.id}}">
+    <div class="search-result" ng-repeat="show in search.results" data-id="{{show.show.id}}">
     <button ng-click="search.addShow(show.show.id)">{{show.show.name}}</button>
     </div>
   </div>
@@ -16,5 +16,9 @@
 <hr>
 
 <div ng-controller="ShowListController as list" class="shows-container">
-{{list.comm.test}}
+  {{list.comm.test}}
+
+  <div ng-repeat="show in list.comm.showIds track by $index">
+    <p>{{show}}</p>
+  </div>
 </div>

@@ -11,9 +11,10 @@ angular.module('tvshows')
     vm.handleSearch = handleSearch;
     vm.addShow = addShow
 
+    vm.comm = Comm;
+
     getUsername();
 
-    vm.comm = Comm;
 
     vm.runningTest = function () {
       console.log('runningTest')
@@ -53,6 +54,7 @@ angular.module('tvshows')
         console.log(vm.selectedShow) //Selected show Object
         console.log(vm.selectedShow.name)
         vm.comm.saveToDatabase(showId)
+
       })
 
 
