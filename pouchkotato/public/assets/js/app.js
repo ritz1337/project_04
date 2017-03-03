@@ -18,7 +18,7 @@
       .state('calendar', {
         url: '/calendar',
         templateUrl: 'calendar.html'
-      });
+      })
 
     $urlRouterProvider.otherwise('/');
   }

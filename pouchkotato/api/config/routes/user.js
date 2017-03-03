@@ -65,4 +65,11 @@ router.put('/shows/add/:id', (req, res, next) => {
   res.json({message: "ShowId successfully added"});
 
 })
+
+router.get('/logout', (req, res, next) => {
+  req.session.destroy( () => {
+    res.redirect('/');
+  });
+})
+
 module.exports = router;
