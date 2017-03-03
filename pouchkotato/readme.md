@@ -1,7 +1,7 @@
 
 # Project 4: PouchKotato
 
-(https://raw.githubusercontent.com/ritz1337/project_04/angular-branch/pouchkotato/PouchKotato%20Screenshot.png)
+![](https://raw.githubusercontent.com/ritz1337/project_04/angular-branch/pouchkotato/PouchKotato%20Screenshot.png)
 
 ## Introduction:
 
