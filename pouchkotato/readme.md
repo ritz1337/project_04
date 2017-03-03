@@ -34,7 +34,7 @@ The idea was to employ a combination of Angular.JS and CSS Frameworks on the fro
 
 
 ### Installation Instructions:
-1. Navigate to: https://lit-shelf-53913.herokuapp.com/
+1. Navigate to: http://pouchkotato.herokuapp.com/
 
 ### Unsolved Problems:
 1. GET Requests for images on user login before the actual template is served up.
