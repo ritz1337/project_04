@@ -2,12 +2,11 @@
 <div ng-controller="SearchController as search" class="search-shows-container">
   <div class="title-content-container center-align">
     <h1>Hello {{search.user.displayName}}</h1>
-    <h5>Add a New Show</h5>
   </div>
 
   <div class="search-container">
     <div class="search-area center-align">
-      <input ng-model="search.query" type="text" id="searchshow" name="search">
+      <input placeholder="Add a Show" ng-model="search.query" type="text" id="searchshow" name="search">
       <div class="center-align">
         <button class="waves-effect teal accent-4 waves-light btn" ng-click="search.handleSearch()" type="button" id="search-button"><i class="material-icons right">search</i>Search</button>
       </div>

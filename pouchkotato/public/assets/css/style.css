@@ -1,17 +1,24 @@
-  body {
+
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     background-color: #4fc3f7;
-  }
+}
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
+
+.hero-image {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .brand-logo {
   margin-left: 50px;
   color: #3498db !important;
+  font-family: 'zeronero', sans-serif;
+
 }
 
 .search-area {
@@ -83,20 +90,42 @@
 
 h1 {
   color: #64ffda;
+  font-family: 'zeronero', sans-serif;
 }
 
 h2 {
   color: #e0f2f1;
+  font-family: 'Concert One', cursive;
+  font-size: 40px;
 }
+
 h3 {
-  color: #1de9b6;
+  /*color: #1de9b6;*/
+  color: #64ffda;
+  font-family: 'Concert One', cursive;
+
 }
 
 h5 {
-  color: #1de9b6;
+  /*color: #1de9b6;*/
+  color: #64ffda;
+  font-family: 'Concert One', cursive;
 }
 
 #search-button {
   color: #b3e5fc;
 }
+
+@font-face {
+  font-family: 'zeronero';
+  src: url('../fonts/zeronero/zeronero.ttf');
+}
+
+input {
+  font-family: 'Concert One', cursive;
+  font-size: 24px !important;
+  color: #64ffda !important;
+}
+
+
 
