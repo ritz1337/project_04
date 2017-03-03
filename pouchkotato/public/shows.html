@@ -1,30 +1,86 @@
 
 <div ng-controller="SearchController as search" class="search-shows-container">
-  <h1>HELLO {{search.user.displayName}}, THESE ARE YOUR SHOWS</h1>
-  <h2>SEE BELOW</h2>
+  <div class="title-content-container center-align">
+    <h1>Hello {{search.user.displayName}}</h1>
+    <h5>Add a New Show</h5>
+  </div>
 
-  <input ng-model="search.query" type="text" id="searchshow" name="search">
-  <button ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
-  <div class="search-results-container animate-show-hide" ng-hide="search.resultClicked">
-    <div class="search-result" ng-repeat="show in search.results" data-id="{{show.show.id}}">
-    <button ng-click="search.addShow(show.show.id)" ng-model="search.resultClicked">{{show.show.name}}</button>
+  <div class="search-container">
+    <div class="search-area center-align">
+      <input ng-model="search.query" type="text" id="searchshow" name="search">
+      <div class="center-align">
+        <button class="waves-effect waves-light btn" ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
+      </div>
     </div>
+
+    <div class="search-results-container center-align animate-show-hide" ng-hide="search.resultClicked">
+     <div class="search-result" ng-repeat="show in search.results" data-id="{{show.show.id}}">
+      <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <img class="query-image" src="{{show.show.image.medium}}">
+            <!-- <span class="card-title">{{show.show.name}}</span> -->
+          </div>
+          <div class="card-content">
+            <p class="teal-text">{{show.show.name}}</p>
+          </div>
+
+          <div class="card-action">
+            <button class="add-show-button waves-effect waves-light btn" ng-click="search.addShow(show.show.id)" ng-model="search.resultClicked">Add to List</button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+<!--       <div class="search-result" ng-repeat="show in search.results" data-id="{{show.show.id}}">
+        <button ng-click="search.addShow(show.show.id)" ng-model="search.resultClicked">{{show.show.name}}</button>
+      </div> -->
+    </div>
+
   </div>
   <!-- <div>{{search.selectedShow.name}}</div> -->
-  <button ng-click="search.runningTest()">test</button>
+  <!-- <button ng-click="search.runningTest()">test</button> -->
 </div>
-<hr>
+
+<div class="divider red"></div>
 
 <div ng-controller="ShowListController as list" class="shows-container">
-  {{list.comm.test}}
+  <div class="section shows-section center-align">
+    <div class="row">
+      <div class="col s12">
+        <h4>Your Shows</h4>
+        <!-- {{list.comm.test}} -->
+        <div class="user-shows-container">
+          <div class="card user-card" ng-repeat="show in list.comm.shows track by $index">
+            <div class="card-image">
+            <img class="result-image" src="{{show.image.medium}}">
+            </div>
+            <div class="card-content">
+              <span class="card-title grey-text text-darken-4"><strong>{{show.name}}</strong></span>
+              <p>Network: {{show.network.name}}</p>
+              <p>Timezone: {{show.network.country.timezone}}</p>
 
-  <div ng-repeat="show in list.comm.showIds track by $index">
-    <p>{{show}}</p>
+              <ul>Days:
+                <li ng-repeat="day in show.schedule.days track by $index">
+                  {{day}}
+                </li>
+              <p>Time: {{show.schedule.time}}</p>
+              <p><a href="{{show.url}}">More Info on TVMaze</a></p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+<!--         <div ng-repeat="show in list.comm.shows track by $index">
+          <p>{{show.name}}</p>
+        </div> -->
+
+      </div>
+    </div>
   </div>
-
-  <div ng-repeat="show in list.comm.shows track by $index">
-    <p>{{show.name}}</p>
-  </div>
-
 </div>
 

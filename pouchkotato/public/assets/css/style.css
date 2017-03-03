@@ -2,14 +2,68 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #2980b9;
   }
 
   main {
     flex: 1 0 auto;
   }
 
-
-.search-result {
-  display: inline;
+.brand-logo {
+  margin-left: 50px;
 }
 
+.search-area {
+  margin: 0 auto;
+  width: 20%;
+}
+
+.search-result {
+  display: inline-block;
+  /*max-width: 500px;*/
+  /*width: 210px;*/
+  min-height: 300px;
+  padding: 5px;
+}
+
+.query-image {
+  width: 210px;
+  height: 295px;
+}
+
+.card-action {
+  padding: 0px !important;
+}
+
+.add-show-button {
+  width: 100%;
+}
+
+.shows-section {
+  background: #3498db;
+  /*padding-top: 20px;*/
+}
+
+.divider {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.user-card {
+  display: inline-block;
+  width: 285px;
+  text-align: left;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.result-image {
+  width: 285px;
+  height: 400px;
+}
+
+.card-title {
+  font-size: 16px !important;
+}

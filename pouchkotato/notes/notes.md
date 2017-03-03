@@ -1,34 +1,19 @@
-function isInArray(value, array) {
-      return array.indexOf(value) > -1;
-    }
+Search Result Objects:
 
-    var getAllShows = function() {
-      $http
-        .get(`/user/shows/all`)
-        .then(function(res) {
-          // console.log(res.data.shows); //array of show IDs associated with user document
-          for(var i = 0; i < res.data.shows.length; i++) {
-            ShowApiService.returnOne(res.data.shows[i], function(oneShow) {
-                // console.log('each show', oneShow) //API queried for each show ID in user document
-                var showData = oneShow.data
-                console.log(showData)
-              // checks if show already exists in show array before pushing
-              if (!isInArray(showData, shows)) {
-               shows.push(showData)
-              }
-            })
-            // console.log(shows)
-            //pushing show ids to an array for testing
-            // if (!isInArray(res.data.shows[i], showIds)) {
-            //   showIds.push(res.data.shows[i])
-            // }
-          }
-          console.log(shows)
-          // console.log(shows.length)
+show.show.id //167
+show.show.name //"24"
+show.show.image.medium //link
+show.show.schedule.days[i] //"monday,etc"
+show.show.schedule.time //"21:00"
 
+Full Show Object:
 
-        },
-        function(err) {
-          console.log(err)
-        })
-    }
+show.name //"24"
+show.image.medium //link
+show.network.country.name //"United States"
+show.network.name //"FOX"
+show.network.country.timezone //"America/New_York"
+show.schedule.days[i] //array
+show.schedule.time //"21:00"
+show.summary //"Long string"
+show.url //link - more info

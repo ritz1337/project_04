@@ -62,7 +62,7 @@ angular.module('tvshows')
                   // if (!shows.includes(showData))
                   // if (!isInArray(showData, shows)) {
                   //   shows.push(showData)
-                  //   console.log(shows)
+                    console.log(shows)
                 }
               })
 

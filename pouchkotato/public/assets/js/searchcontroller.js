@@ -41,6 +41,7 @@ angular.module('tvshows')
       ShowApiService.searchAll(vm.query, function(res) {
         // console.log(res) //returns show choices from search
         vm.results = res.data;
+        console.log(vm.results)
         vm.query = ''
       })
       vm.resultClicked = false
