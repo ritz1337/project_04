@@ -1,6 +1,8 @@
 
 # Project 4: PouchKotato
 
+(https://raw.githubusercontent.com/ritz1337/project_04/angular-branch/pouchkotato/PouchKotato%20Screenshot.png)
+
 ## Introduction:
 
 PouchKotato allows you to track your favorite TV Shows. You simply add shows to your list and get back information like current season, current episode, next episode date & time, and more.
