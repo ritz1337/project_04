@@ -2,7 +2,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #2980b9;
+    background-color: #4fc3f7;
   }
 
   main {
@@ -11,11 +11,23 @@
 
 .brand-logo {
   margin-left: 50px;
+  color: #3498db !important;
 }
 
 .search-area {
   margin: 0 auto;
   width: 20%;
+}
+
+#searchshow {
+    border: 2px solid #1de9b6;
+    border-radius: 10px;
+    text-align: center;
+    color: #1de9b6;
+}
+
+.login-button {
+  color: #3498db;
 }
 
 .search-result {
@@ -40,14 +52,14 @@
 }
 
 .shows-section {
-  background: #3498db;
+  /*background: #3498db;*/
   /*padding-top: 20px;*/
 }
 
 .divider {
   width: 75%;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 
@@ -55,8 +67,9 @@
   display: inline-block;
   width: 285px;
   text-align: left;
-  margin: 10px;
+  margin: 20px;
   border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .result-image {
@@ -66,4 +79,23 @@
 
 .card-title {
   font-size: 16px !important;
+}
+
+h1 {
+  color: #64ffda;
+}
+
+h2 {
+  color: #e0f2f1;
+}
+h3 {
+  color: #1de9b6;
+}
+
+h5 {
+  color: #1de9b6;
+}
+
+#search-button {
+  color: #b3e5fc;
 }

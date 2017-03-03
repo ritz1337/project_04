@@ -9,7 +9,7 @@
     <div class="search-area center-align">
       <input ng-model="search.query" type="text" id="searchshow" name="search">
       <div class="center-align">
-        <button class="waves-effect waves-light btn" ng-click="search.handleSearch()" type="button" id="search-button">Search</button>
+        <button class="waves-effect teal accent-4 waves-light btn" ng-click="search.handleSearch()" type="button" id="search-button"><i class="material-icons right">search</i>Search</button>
       </div>
     </div>
 
@@ -44,13 +44,13 @@
   <!-- <button ng-click="search.runningTest()">test</button> -->
 </div>
 
-<div class="divider red"></div>
+<div class="divider teal accent-4"></div>
 
 <div ng-controller="ShowListController as list" class="shows-container">
   <div class="section shows-section center-align">
     <div class="row">
       <div class="col s12">
-        <h4>Your Shows</h4>
+        <h3>Your Shows</h3>
         <!-- {{list.comm.test}} -->
         <div class="user-shows-container">
           <div class="card user-card" ng-repeat="show in list.comm.shows track by $index">
