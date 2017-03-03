@@ -43,7 +43,8 @@ The idea was to employ a combination of Angular.JS and CSS Frameworks on the fro
 3. Add more information on each show
 
 ### Wireframes
-https://github.com/ritz1337/project_02_crud_app/blob/master/VocalKords%20Wireframes.pdf
+https://github.com/ritz1337/project_04/blob/angular-branch/pouchkotato/PouchKotato%20Wireframes.pdf
 
 ### User Stories
-1. On Trello, ask!
+https://github.com/ritz1337/project_04/blob/angular-branch/pouchkotato/PouchKotato%20Trello%20Board.png
+
