@@ -128,4 +128,22 @@ input {
 }
 
 
+@media (max-width: 600px) {
+  .search-area {
+    width: 80%;
+  }
+  .brand-logo {
+    margin-left: 0px;
+  }
+  .hero-image {
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 3.3rem;
+  }
+  .show-header {
+
+  }
+
+}
 
